@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var app = app || {};
 
@@ -22,7 +22,7 @@ var app = app || {};
     Book.all = rawData.map(row=> new Book(row));
   };
 
-//this will call the loadall function, taking the data from the server and pushing it into the new Book constructor
+  //this will call the loadall function, taking the data from the server and pushing it into the new Book constructor
 
   Book.fetchAll = callback => {
     $.get('/books_app')
