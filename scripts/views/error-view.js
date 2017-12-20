@@ -12,5 +12,5 @@ var app = app || {};
   module.bookView = bookView;
 }(app));
 
-$(() => app.Book.fetchAll(app))
+$(() => app.Book.fetchAll(app));
 
