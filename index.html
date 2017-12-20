@@ -10,23 +10,39 @@
     <link rel="stylesheet" href="styles/module.css">
     <link rel="stylesheet" href="styles/reset.css">
     <title>Document</title>
-    <script id="book-template" type="text/x-handlebars-template">
-         <section id="booklist">
-             <ul id="totalbooks">Book Count:</ul>
-             <ul id="booklist-item">Books</ul>
-        </section>>
+    <script id="error-template" type="text/x-handlebars-template">
+        <h3> Oops, error!</h3>
+        <p>{{status}}: {{satusText}}</p>
     </script>
+    <script id="book-list-template" type="text/x-handlebars-template">
+        <li class="book-item" data-bookid = {{book_id}}>
+            <div class="book-container">   
+                <img src="{{image_url}}">
+                <div>
+                    <h2>{{title}}</h2>
+                    <p>{{author}}</p>
+                </div>
+            </div>
+        </li>
+   </script>
 </head>
 <body>
     <header>
-        <h1>Hello World</h1>
+        <div class="header-content">
+            <a href="/"><img src="" alt=""></a>
+            <h1>Code Fellows Book</h1>
+        </div>
     </header>
-    <section id="book-template">
-        <ul id="totalbooks">Book Count:</ul>
+    <main>
 
-        <ul id="booklist-item">Books</ul>
-        
-    </section>
+        <section id="book-template">
+            <ul id="totalbooks">Book Count:</ul>
+    
+            <ul id="booklist-item">Books</ul>
+            
+        </section>
+    </main>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
