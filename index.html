@@ -5,17 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    
+    <!--Application Templates-->
+    <script type="text/x-handlebars-template" id="error-template">
+    <h3>Oops, there was problem</h3>
+<p>{{status}}: {{statusText}}</p>
+</script>
+<!-- when error occurs, object is returned, the status and statusTexts are propoerties of that object-->
+<script type="handlebarsetcetc" id="book-list-template"><!-- think back to wireframe for this scaffold-->
+    <li class="book-item"><img src="{{image_url}}">
+        <div>
+            <h2>{{title}}</h2>
+                <p>{{author}}</p>
+        </div>
+    </li>
+</script>
+
 </head>
 <body>
     <header>
         <h1>Hello World</h1>
     </header>
-    <section id="booklist">
-        <ul id="totalbooks">Book Count:</ul>
-
-        <ul id="booklist-item">Books</ul>
+    <main>
+        <section id="booklist">
+            <ul id="totalbooks">Book Count:</ul>
         
-    </section>
+            <ul id="booklist-item">Books</ul>
+        </section>
+        <!-- these little sections will become pages/views-->
+        <section class ="error-view">ERROR HAPPENED DUMDUM</section>
+    </main>
+   
 </body>
 </html>
