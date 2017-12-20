@@ -16,6 +16,9 @@ var app = app || {};
     return Handlebars.compile($('#book-list-template').text())(this);
   };
 
+  Book.prototype.detail = function() {
+    return Handlebars.compile($('#book-details-template').text())(this);
+  };  
   //this will call the loadall function, taking the data from the server and pushing it into the new Book constructor
 
   Book.fetchAll = callback => {
@@ -33,6 +36,16 @@ var app = app || {};
       .then(Book.loadAll)
       .then(callback)
       .catch(errorCallback);
+  };
+
+
+  Book.loadOne = row => row.map(book => new Book(book));
+
+  Book.fetchOne = callback => {
+    $.get(`${__API_URL__}/api/v1/books/1`)
+      .then (Book.loadOne)
+      .then (callback)
+      .then(errorCallback);
   };
   module.Book = Book;
 

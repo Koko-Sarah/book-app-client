@@ -13,7 +13,6 @@
     <title>Document</title>
     <script id="book-template" type="text/x-handlebars-template">
          <section id="booklist">
-             
              <ul id="totalbooks">Book Count:{{total-books}}</ul>
              <ul id="booklist-item">{{Books}}</ul>
         </section>>
@@ -33,16 +32,33 @@
                     <h2>{{title}}</h2>
                     <p>{{author}}</p>
                 </div>
+                <button class="detail-button" id=`${book_id}`>View Details</button>
             </div>
         </li>
+   </script>
+
+   <script id="book-details-template" type="text/x-handlebars-template">
+        <section class="book-details">
+            <h1>{{title}}</h1>
+            <p>{{author}}</p>
+            <p>{{isbn}}</p>
+            <img src="{{image_url}}">
+            <p>{{description}}</p>
+         </section>
    </script>
 </head>
 
 <body>
     <header>
         <div class="header-content">
-            <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo"></a>
-            <h1>Code Fellows Book</h1>
+            <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo" id="logo"></a>
+            <h1>book app</h1>
+            <nav>
+                <ul>
+                    <li>All Books</li>
+                    <li>Add Book</li>
+                </ul>
+            </nav>
         </div>
     </header>
     <main>
@@ -51,12 +67,15 @@
           <section id="error-message"></section>
         </section>
 
-        <section class="book-view-container">
+        <section class="book-view container">
             <h2 class="view-title">My Books</h2>
             <section class="book-list">
                 <ul id="book-list"></ul>
             </section>
-            </section>
+        </section>
+
+        <section class="book-details container">
+        </section>
       
     </main>
     <footer>

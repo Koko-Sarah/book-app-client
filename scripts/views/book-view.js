@@ -11,6 +11,18 @@ var app = app || {};
     module.Book.all.map(book => $('#book-list').append(book.toHtml()));
   };
 
+  bookView.initBookDetails = function () {
+    $('.container').hide();
+    $('.book-details').show();
+    module.Book.id.map(book => $('.book-details').append(book.detail()));
+  };
+  bookView.handleDetails = () => {
+    $(`.detail-button`).on ('submit', function(event){
+      event.preventDefault();
+      this.initBookDetails();
+    });
+  };
+
   module.bookView = bookView;
 })(app);
 
