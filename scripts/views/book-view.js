@@ -9,6 +9,7 @@ var app = app || {};
     $('.container').hide();
     $('.book-view').show();
     module.Book.all.map(book => $('#book-list').append(book.toHtml()));
+
   };
 
   bookView.initBookDetails = function () {
@@ -16,10 +17,12 @@ var app = app || {};
     $('.book-details').show();
     module.Book.id.map(book => $('.book-details').append(book.detail()));
   };
-  bookView.handleDetails = () => {
-    $(`.detail-button`).on ('submit', function(event){
+
+  bookView.handleDetails = function () {
+    $('.book-view-container').on ('click', '.detail-button', function(event){
       event.preventDefault();
-      this.initBookDetails();
+      console.log('event handler fired');
+      //this.initBookDetails();
     });
   };
 
@@ -27,3 +30,5 @@ var app = app || {};
 })(app);
 
 $(() => app.Book.fetchAll(app.bookView.initIndexPage));
+//$(() => app.bookView.handleDetails);
+//$(app.bookView.handleDetails());
