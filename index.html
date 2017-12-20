@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/icons.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/module.css">
     <link rel="stylesheet" href="styles/reset.css">
-    <title>Document</title>
+
+    <!-- Application Templates-->
+
     <script id="error-template" type="text/x-handlebars-template">
         <h3> Oops, error!</h3>
         <p>{{status}}: {{statusText}}</p>
     </script>
+
     <script id="book-list-template" type="text/x-handlebars-template">
         <li class="book-item" data-bookid = {{book_id}}>
             <div class="book-container">   
@@ -26,26 +30,46 @@
         </li>
    </script>
 </head>
+
 <body>
     <header>
         <div class="header-content">
-            <a href="/"><img src="" alt=""></a>
+            <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo"></a>
             <h1>Code Fellows Book</h1>
         </div>
     </header>
     <main>
-
-        <section id="book-template">
-            <ul id="totalbooks">Book Count:</ul>
-    
-            <ul id="booklist-item">Books</ul>
-            
+        <section class="error-view container">
+            <h2 class="view-title"> Oops, error!</h2>
+          <section id="error-message"></section>
         </section>
-    </main>
 
+        <section class="book-view-container">
+            <h2 class="view-title">My Books</h2>
+            <section class="book-list">
+                <ul id="book-list"></ul>
+            </section>
+            </section>
+      
+    </main>
+    <footer>
+    <aside class="social-links">
+      <ul>
+        <li><i class="icon-mail2"><a href=""></a></i></li>
+        <li><i class="icon-twitter"><a href=""></a></i></li>
+        <li><i class="icon-github"><a href=""></a></i></li>
+        <li><i class="icon-linkedin2"><a href=""></a></i></li>
+      </ul>
+    </aside>
+    </footer>
+
+
+<!--external CDN resources-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+
+    <!--Application Resources-->
     <script src="vendor/scripts/highlight.pack.js"></script>
     <script src="scripts/models/book-view.js"></script>
     <script src="scripts/models/error-view.js"></script>
