@@ -51,6 +51,7 @@ var app = app || {};
   ///form method
 
   Book.prototype.insertBook = function (callback) {
+    console.log('hit the insertbook function');
     $.post(`${__API_URL__}/api/v1/books`, {
       title: this.title,
       author: this.author,

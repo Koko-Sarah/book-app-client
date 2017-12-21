@@ -46,7 +46,7 @@ var app = app || {};
 
 
   bookView.submit = event => {
-
+    console.log ('we hit submit event');
     event.preventDefault();
     let book = new app.Book ({
       title: $('#title').val(),
