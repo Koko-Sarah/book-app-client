@@ -47,6 +47,26 @@
             <p>{{description}}</p>
             </div>
     </script>
+    <script id="form-book-template" type="text/x-handlebars-template">
+        
+    <form action="#" id="new-form">
+        <label>
+            <input type="text" id="title" placeholder="Book title" required>
+        </label>
+        <label>
+            <input type="text" id="author" placeholder="Author Name" required>
+        </label>
+        <label>
+            <input type="text" id="isbn" placeholder="ISBN" required>
+        </label>
+        <label>
+            <input type="text" id="image-url" placeholder="Image's URL" required>
+        </label>
+        <textarea id="description" rows="8" cols="40" placeholder="Description" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    </script>
 </head>
 
 <body>
@@ -80,6 +100,13 @@
             <section id="details-section">
 
             </section>
+        </section>
+
+        <section class="new-book container">
+            <h1>Add a New Book</h1>
+        <section id="new-book" class="new-book-content">
+
+        </section>
         </section>
       
     </main>
