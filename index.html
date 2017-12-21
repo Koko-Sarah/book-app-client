@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/icons.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/module.css">
     <link rel="stylesheet" href="styles/reset.css">
+
     <title>Document</title>
+
     <script id="book-template" type="text/x-handlebars-template">
          <section id="booklist">
              <ul id="totalbooks">Book Count:{{total-books}}</ul>
@@ -46,6 +48,16 @@
             <p>{{description}}</p>
          </section>
    </script>
+
+   <script id= "new-book-template" type="text/x-handlebars-template">
+        <section class= "new-book-form">
+            <div class="book-container">
+                <form>
+                    <input type="text" name=""></input>
+                </form>
+            </div>
+        </section>
+</script>
 </head>
 
 <body>
@@ -75,6 +87,29 @@
         </section>
 
         <section class="book-details container">
+            <h2>Book Details</h2>
+        </section>
+
+        <section class="new-book container">
+            <h1>Add a New Book</h1>
+                <form action="#" id="new-form">
+                    <label>
+                        <input type="text" id="title" placeholder="Book title" required>
+                    </label>
+                    <label>
+                        <input type="text" id="author" placeholder="Author Name" required>
+                    </label>
+                    <label>
+                        <input type="text" id="isbn" placeholder="ISBN" required>
+                    </label>
+                    <label>
+                        <input type="text" id= "image-url" placeholder="Image's URL" required>
+                    </label>
+                    <textarea id="description" rows="8" cols="40" placeholder="Description" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+        </section>
+        <section id= "new-book" class="new-book-content">
         </section>
       
     </main>
