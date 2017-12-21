@@ -44,13 +44,8 @@ var app = app || {};
 
     $('#new-book').append(book.toHtml());
 
-    $('pre code').each(function (i, block) {
-      hljs.highlightBlock(block);
-    });
-    $('#export-field').show();
-  };
   bookView.submit = event => {
-    
+
     event.preventDefault();
     let book = new Book({
       title: $('#title').val(),
