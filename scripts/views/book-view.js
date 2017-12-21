@@ -15,20 +15,12 @@ var app = app || {};
   bookView.initBookDetails = function () {
     $('.container').hide();
     $('.book-details').show();
-    module.Book.id.map(book => $('.book-details').append(book.detail()));
-  };
-
-  bookView.handleDetails = function () {
-    $('.book-view-container').on ('click', '.detail-button', function(event){
-      event.preventDefault();
-      console.log('event handler fired');
-      //this.initBookDetails();
-    });
+    $('#detail-desc').empty();
+    // console.log(module.Book.all)
+    module.Book.all.map(book => $('#detail-desc').append(book.detailHtml()));
   };
 
   module.bookView = bookView;
 })(app);
 
 $(() => app.Book.fetchAll(app.bookView.initIndexPage));
-//$(() => app.bookView.handleDetails);
-//$(app.bookView.handleDetails());

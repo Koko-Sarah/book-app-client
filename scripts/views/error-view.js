@@ -2,15 +2,17 @@
 
 var app = app || {};
 (function(module) {
-  const bookView = {};
+  const errorView = {};
 
-  bookView.initIndexPage = function(err) {
+  errorView.initErrorPage = function(err) {
     $('.container').hide();
     $('.error.view').show();
-    module.Book.all.map(book => $('#book-list').append(book.toHtml()));
+    $('#error-message').empty();
+    let template = Handlebars.compile($('#error-template').text());
+    $('#error-message').append(template(err));
+      
   };
-  module.bookView = bookView;
+  module.errorView = errorView;
 }(app));
 
-$(() => app.Book.fetchAll(app));
 
