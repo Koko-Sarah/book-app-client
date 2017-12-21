@@ -8,8 +8,11 @@ var app = app || {};
   bookView.initIndexPage = function () {
     $('.container').hide();
     $('.book-view').show();
-
-    module.Book.all.map(book => $('#book-list').append(book.toHtml('.book-item')));
+    console.log('right aboe the');
+    module.Book.all.map(book => {
+      console.log('im in the to html method! whats book?', book);
+      $('#book-list').append(book.toHtml('.book-item'));
+    });
 
     // $('.book-container').on('click', '.detail-button', function (event) {
     //   event.preventDefault();

@@ -14,6 +14,7 @@ var app = app || {};
   }
 
   Book.prototype.toHtml = function(templateId) {
+    console.log(templateId, '..is template id!');
     return Handlebars.compile($(templateId).text())(this);
   };
 
@@ -60,10 +61,8 @@ var app = app || {};
   //     .then(errorCallback);
   // };
 
-
   //set up event listener in class
-
-  
+ 
   // $('.book-view-container').on ('click', '.detail-button', function(event){
   //   event.preventDefault();
   //   console.log('event handler fired');
