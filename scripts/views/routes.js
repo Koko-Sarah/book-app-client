@@ -1,12 +1,17 @@
 
 'use strict';
 
-page('/index', ctx => initIndexPage(ctx));
-page('/about', ctx => initIndexPage(ctx));
-page('/index/:id', ctx => initDetailPage(ctx));
+page('/', app.Book.fetchAll(app.bookView.initIndexPage));
+//page('/about', ctx => app.Book.fetchAll(app.bookView.initIndexPage(ctx)));
+page('/index/:id', ctx => app.Book.fetchOne(app.bookView.initDetailPage(ctx)));
+
+//page();
 
 
-page();
 // app.bookView.initBookDetails();
 
-// $(() => app.Book.fetchAll(app.bookView.initIndexPage));
+
+//previously on book-view page
+// $((ctx=> app.Book.fetchAll(app.bookView.initIndexPage(ctx));
+
+//ctx => app.Book.fetchOne(app.bookView.initDetailPage(ctx))
