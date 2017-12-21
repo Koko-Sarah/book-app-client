@@ -12,6 +12,7 @@ var app = app || {};
   function Book(rawBookObj) {
     Object.keys(rawBookObj).map(key => this[key] = rawBookObj[key]);
   }
+
   Book.prototype.toHtml = function(templateId) {
     return Handlebars.compile($(templateId).text())(this);
   };
@@ -58,6 +59,18 @@ var app = app || {};
   //     .then (callback)
   //     .then(errorCallback);
   // };
+
+
+  //set up event listener in class
+
+  
+  // $('.book-view-container').on ('click', '.detail-button', function(event){
+  //   event.preventDefault();
+  //   console.log('event handler fired');
+  //   .get
+  // });
+
+
 
   module.Book = Book;
 

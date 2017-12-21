@@ -9,7 +9,7 @@ var app = app || {};
     $('.container').hide();
     $('.book-view').show();
 
-    module.Book.all.map(book => $('#book-list').append(book.toHtml('.book-view')));
+    module.Book.all.map(book => $('#book-list').append(book.toHtml('.book-item')));
 
     // $('.book-container').on('click', '.detail-button', function (event) {
     //   event.preventDefault();
