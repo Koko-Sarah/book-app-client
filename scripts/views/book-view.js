@@ -15,12 +15,14 @@ var app = app || {};
   bookView.initBookDetails = function () {
     $('.container').hide();
     $('.book-details').show();
-    $('#detail-desc').empty();
+    $('#details-section').empty();
     // console.log(module.Book.all)
-    module.Book.all.map(book => $('#detail-desc').append(book.detailHtml()));
+    module.Book.all.map(book => $('#details-section').append(book.detailHtml()));
   };
 
   module.bookView = bookView;
 })(app);
 
 $(() => app.Book.fetchAll(app.bookView.initIndexPage));
+
+
