@@ -47,6 +47,11 @@
             <p>{{description}}</p>
             </div>
     </script>
+    <script id="form-book-template" type="text/x-handlebars-template">
+        
+<!--form placeholder-->
+
+    </script>
 </head>
 
 <body>
@@ -57,7 +62,7 @@
             <nav>
                 <ul>
                     <li>All Books</li>
-                    <li>Add Book</li>
+                    <li><a href="/form"> Add Book</a></li>
                 </ul>
             </nav>
         </div>
@@ -80,6 +85,29 @@
             <section id="details-section">
 
             </section>
+        </section>
+
+        <section class="new-book container">
+            <h1>Add a New Book</h1>
+        <section id="new-book" class="new-book-content">
+                <form action="#" id="new-form">
+                    <label>
+                        <input type="text" id="title" placeholder="Book title" required>
+                    </label>
+                    <label>
+                        <input type="text" id="author" placeholder="Author Name" required>
+                    </label>
+                    <label>
+                        <input type="text" id="isbn" placeholder="ISBN" required>
+                    </label>
+                    <label>
+                        <input type="text" id="image-url" placeholder="Image's URL" required>
+                    </label>
+                    <textarea id="description" rows="8" cols="40" placeholder="Description" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+
+        </section>
         </section>
       
     </main>

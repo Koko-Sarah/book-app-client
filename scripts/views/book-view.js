@@ -20,6 +20,50 @@ var app = app || {};
     module.Book.all.map(book => $('#details-section').append(book.detailHtml()));
   };
 
+
+
+  ///////////////////////////////////Form functions
+
+  bookView.initNewBookPage = () => {
+    $('.container').hide();
+    $('.new-book').show();
+   // $('#new-book').on('change', 'input, textarea', bookView.create);
+    $('#new-book').on('submit', bookView.submit);
+  };
+
+  bookView.create = () => {
+    let newBook;
+    $('#new-book').empty();
+
+    newBook = new app.Book ({
+      title: $('#title').val(),
+      author: $('#author').val(),
+      isbn: $('#isbn').val(),
+      image_url: $('#image_url').val(),
+      description: $('#description').val()
+    });
+  };
+
+
+  bookView.submit = event => {
+    console.log ('we hit submit event');
+    event.preventDefault();
+    let book = new app.Book ({
+      title: $('#title').val(),
+      author: $('#author').val(),
+      isbn: $('#isbn').val(),
+      image_url: $('#image_url').val(),
+      description: $('#description').val(),
+    });
+
+    book.insertBook();
+  };
+
+
+
+
+
+
   module.bookView = bookView;
 })(app);
 

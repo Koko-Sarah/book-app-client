@@ -2,17 +2,18 @@
 
 var app = app || {};
 (function (module) {
-  var __API_URL__ = 'https://sb-kk-booklist.herokuapp.com';
-  //var __API_URL__ = 'http://localhost:3000';
+  //var __API_URL__ = 'https://sb-kk-booklist.herokuapp.com';
+  var __API_URL__ = 'http://localhost:3000';
 
   function errorCallback(err){
     console.error(err);
     module.errorView.initErrorPage(err);
   }
-  
+
   function Book(rawBookObj) {
     Object.keys(rawBookObj).map(key => this[key] = rawBookObj[key]);
   }
+
 
   Book.prototype.toHtml = function() {
     return Handlebars.compile($('#book-list-template').text())(this);
@@ -46,6 +47,22 @@ var app = app || {};
       .then(callback)
       .catch(errorCallback);
   };
+
+  ///form method
+
+  Book.prototype.insertBook = function (callback) {
+    console.log('hit the insertbook function');
+    $.post(`${__API_URL__}/api/v1/books`, {
+      title: this.title,
+      author: this.author,
+      isbn: this.isbn,
+      image_url: this.image_url,
+      description: this.description
+    })
+      .then(console.log)
+      .then(callback);
+  };
+
 
 
   module.Book = Book;
