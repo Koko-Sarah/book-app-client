@@ -2,8 +2,8 @@
 
 var app = app || {};
 (function (module) {
-  //var __API_URL__ = 'https://sb-kk-booklist.herokuapp.com';
-  var __API_URL__ = 'http://localhost:3000';
+  var __API_URL__ = 'https://sb-kk-booklist.herokuapp.com';
+  //var __API_URL__ = 'http://localhost:3000';
 
   function errorCallback(err){
     console.error(err);
