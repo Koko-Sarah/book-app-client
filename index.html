@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles/module.css">
     <link rel="stylesheet" href="styles/reset.css">
     <title>Document</title>
+    <!--index view-->
     <script id="book-template" type="text/x-handlebars-template">
          <section id="booklist">
              <ul id="totalbooks">Book Count:{{total-books}}</ul>
@@ -32,19 +33,21 @@
                     <h2>{{title}}</h2>
                     <p>{{author}}</p>
                 </div>
-                <button class="detail-button" id=`${book_id}`>View Details</button>
+                <button type="button" class="detail-button" id="bookid--{{book_id}}"><a href="/books/{{book}}">View Details</a></button>
             </div>
         </li>
    </script>
 
    <script id="book-details-template" type="text/x-handlebars-template">
-        <section class="book-details">
+        
+            <div class ="details-desc">
             <h1>{{title}}</h1>
             <p>{{author}}</p>
             <p>{{isbn}}</p>
             <img src="{{image_url}}">
             <p>{{description}}</p>
-         </section>
+            </div>
+        
    </script>
 </head>
 
@@ -75,6 +78,10 @@
         </section>
 
         <section class="book-details container">
+            <h2>Detail View</h2>
+            <section id="detail-desc">
+
+            </section>
         </section>
       
     </main>
