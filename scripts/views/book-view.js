@@ -16,7 +16,8 @@ var app = app || {};
     $('.container').hide();
     $('.book-details').show();
     $('#detail-desc').empty();
-    module.Book.all.map(book => $('.book-details').append(book.detailHtml()));
+    // console.log(module.Book.all)
+    module.Book.all.map(book => $('#detail-desc').append(book.detailHtml()));
   };
 
   module.bookView = bookView;
