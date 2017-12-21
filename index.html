@@ -32,7 +32,7 @@
                     <h2>{{title}}</h2>
                     <p>{{author}}</p>
                 </div>
-                <button class="detail-button" id=`${book_id}`>View Details</button>
+                <button type="button" class="detail-button" id="bookid-{{book_id}}"><a href="/books/{{books_id}}">View Details</a></button>
             </div>
         </li>
    </script>
@@ -74,7 +74,11 @@
             </section>
         </section>
 
-        <section class="book-details container">
+        <section class="book-detail-section container">
+            <h2>Detail View</h2>
+            <section id ="detail-desc">
+
+            </section>
         </section>
       
     </main>
@@ -94,11 +98,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
 
     <!--Application Resources-->
     <!-- <script src="vendor/scripts/highlight.pack.js"></script> -->
     <script src="scripts/views/book-view.js"></script>
     <script src="scripts/views/error-view.js"></script>
     <script src="scripts/models/book.js"></script>
+    <script src="scripts/views/routes.js"></script>
+    
+
 </body>
 </html>
