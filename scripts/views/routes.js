@@ -4,7 +4,12 @@
 page('/', app.Book.fetchAll(app.bookView.initIndexPage));
 //page('/about', ctx => app.Book.fetchAll(app.bookView.initIndexPage(ctx)));
 
-page('/books/:id', ctx=> ( app.Book.fetchOne(ctx.params.id, app.bookView.initDetailPage)));
+page('/books/:id', ctx=> {
+    
+  ( app.Book.fetchOne(ctx.params.id, app.bookView.initDetailPage));
+  console.log('ctx is wuh', ctx);
+
+});
 
 //page();
 
