@@ -2,8 +2,8 @@
 
 var app = app || {};
 (function (module) {
-  var __API_URL__ = 'https://sb-kk-booklist.herokuapp.com';
-  //var __API_URL__ = 'http://localhost:3000';
+  //var __API_URL__ = 'https://sb-kk-booklist.herokuapp.com';
+  var __API_URL__ = 'http://localhost:3000';
 
   function errorCallback(err){
     console.error(err);
@@ -38,6 +38,13 @@ var app = app || {};
       .then(callback)
       .catch(errorCallback);
   };
+
+  Book.deleteOne = (id, callback) => {
+   
+    // $.ajax ({
+    //   url:`${__API_URL__}/api/v1/books/${id}`
+    // })
+  }
 
   Book.all = [];
   Book.loadAll = rows => Book.all = rows.sort((a,b) => a.title - b.title).map(book => new Book(book));
