@@ -26,7 +26,7 @@ var app = app || {};
   //this will call the loadall function, taking the data from the server and pushing it into the new Book constructor
 
   Book.fetchAll = callback => {
-    $.get(`${__API_URL__}/api/v1/books_app`)
+    $.get(`${__API_URL__}/api/v1/books`)
       .then(results => {
         Book.loadAll(results);
         callback();
