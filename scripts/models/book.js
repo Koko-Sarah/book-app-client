@@ -50,14 +50,38 @@ var app = app || {};
   //     .catch(errorCallback);
   // };
 
-  ///form method
+  ///UPDATE METHOD
 
-  Book.prototype.insertBook = function (callback) {
+  // Book.prototype.insertBook = function (callback) {
+  //   console.log('hit the insertbook function, this:', this);
+  //   $.post(`${__API_URL__}/api/v1/books`, this)
+  //     .then(console.log)
+  //     .then(callback)
+  //     .catch(errorCallback);
+  // };
+  Book.prototype.insertBook = function () {
     console.log('hit the insertbook function, this:', this);
-    $.post(`${__API_URL__}/api/v1/books`, this)
-      .then(console.log)
-      .then(callback)
-      .catch(errorCallback);
+    $.post(`${__API_URL__}/api/v1/books`, {
+      title: this.title,
+      author: this.author,
+      isbn: this.isbn,
+      image_url: this.image_url,
+      description: this.description
+    })
+      .then(data => console.log(data));
+  }; 
+
+  ///DELETE METHOD
+
+  Book.deleteOne = function (id) {
+    console.log('hit the deleteOne function, this:', this);
+
+    $.ajax ({
+      url: `${__API_URL__}/api/v1/books/${id}`,
+      method: 'DELETE',
+    })
+      .then(() => page('/'))
+      .catch(module.errorView.initErrorPage);
   };
 
 
