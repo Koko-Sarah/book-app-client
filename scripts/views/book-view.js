@@ -56,7 +56,7 @@ var app = app || {};
       description: $('#description').val(),
     });
 
-    book.insertBook();
+    book.insertBook(() => page('/'));
   };
 
 
