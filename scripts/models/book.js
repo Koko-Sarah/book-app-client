@@ -73,16 +73,16 @@ var app = app || {};
 
   ///DELETE METHOD
 
-  Book.deleteOne = function (id) {
-    console.log('hit the deleteOne function, this:', this);
+  // Book.deleteOne = function (id) {
+  //   console.log('hit the deleteOne function, this:', this);
 
-    $.ajax ({
-      url: `${__API_URL__}/api/v1/books/${id}`,
-      method: 'DELETE',
-    })
-      .then(() => page('/'))
-      .catch(module.errorView.initErrorPage);
-  };
+  //   $.ajax ({
+  //     url: `${__API_URL__}/api/v1/books/${id}`,
+  //     method: 'DELETE',
+  //   })
+  //     .then(() => page('/'))
+  //     .catch(module.errorView.initErrorPage);
+  // };
 
 
 
