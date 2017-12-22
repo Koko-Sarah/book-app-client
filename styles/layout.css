@@ -7,16 +7,25 @@
 .book-list {
     position: relative;
     display: block;
-    width:80%;
+    width:50%;
     margin: auto ;    
     /* margin-top: .5em; */
-    /* margin-bottom: 5em; */
+    margin-bottom: 5em;
 
 }
 
+.views {
+    float: right;
+}
+#form-button,
 .detail-button {
-    margin-left: 15em;
+    float: right;
+    padding: 1em;
+    margin: 1em;
+    border-radius: .5em;
+
 }
+  
 
 .details-desc {
     padding: 1em;

@@ -1,5 +1,9 @@
-html {
-    font-family: 'Lucida Sans Regular' sans-serif;
+html,
+body {
+   font-family: 'Century Gothic', sans-serif;
+   margin:0;
+   padding:0;
+   height:100%;
 }
 header {
     background-color:rgb(68, 66, 66);
@@ -21,7 +25,7 @@ h2 {
 }
 
 h3, p, img {
-    padding: 1em;
+    padding: .5em;
 }
 
 a {
@@ -52,19 +56,21 @@ div > img {
 
 label, 
 input,
-textarea {
+textarea,
+#description {
     font-size: 1em;
     /* margin: 1em; */
     display: block;
     width:80%;
     margin: auto ;
-    margin-bottom: 1em;
-    margin-top: 1em;
+    margin-bottom: .5em;
+    margin-top: .5em;
     border-radius: .5em;
     padding: .5em;
+    font-family: 'Century Gothic', sans-serif;
   }
 
 footer{
     background-color: grey;
-    height: 4em;
+    position: fixed;bottom:0;left:0;right:0;height:30px;
 }

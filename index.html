@@ -29,7 +29,7 @@
         <li class="book-item" data-bookid = {{book_id}}>
             <div class="book-container">   
                 <img src="{{image_url}}">
-                <div>
+                <div class="views">
                     <h3>{{title}}</h3>
                     <p>{{author}}</p>
                 </div>
@@ -111,7 +111,7 @@
                         <input type="text" id="image-url" placeholder="Image's URL" required>
                     </label>
                     <textarea id="description" rows="8" cols="40" placeholder="Description" required></textarea>
-                    <button type="submit">Submit</button>
+                    <button id= "form-button" type="submit">Submit</button>
                 </form>
 
             </section>
