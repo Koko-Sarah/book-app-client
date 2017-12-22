@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="styles/base.css">
+
     <link rel="stylesheet" href="styles/icons.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/module.css">
-    <link rel="stylesheet" href="styles/reset.css">
+    
+    
     <title>Document</title>
     <!--index view-->
     <script id="book-template" type="text/x-handlebars-template">
@@ -26,14 +29,22 @@
     </script>
 
     <script id="book-list-template" type="text/x-handlebars-template">
+        
         <li class="book-item" data-bookid = {{book_id}}>
             <div class="book-container">   
                 <img src="{{image_url}}">
-                <div>
-                    <h2>{{title}}</h2>
-                    <p>{{author}}</p>
+                <div id = "book-title-group">
+                    <div id="book-title-text">
+                        <h2>{{title}}</h2>
+                        <p>{{author}}</p>
+                    </div>
+                    <div id ="book-item-submit-div">
+                        <submit type="button" class="detail-button" id="bookid--{{book_id}}">
+                            <a href="/books/{{book_id}}">View Details</a>
+                        </submit>
+                    </div>
                 </div>
-                <button type="button" class="detail-button" id="bookid--{{book_id}}"><a href="/books/{{book_id}}">View Details</a></button>
+                
             </div>
         </li>
    </script>
