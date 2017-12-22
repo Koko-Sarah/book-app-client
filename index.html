@@ -1,10 +1,10 @@
-
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/icons.css">
     <link rel="stylesheet" href="styles/layout.css">
@@ -38,7 +38,7 @@
         </li>
    </script>
 
-   <script id="book-details-template" type="text/x-handlebars-template">
+    <script id="book-details-template" type="text/x-handlebars-template">
             <div class ="details-desc">
             <h1>{{title}}</h1>
             <p>{{author}}</p>
@@ -57,12 +57,16 @@
 <body>
     <header>
         <div class="header-content">
-            <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo" id="logo"></a>
+            <a href="/">
+                <img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo" id="logo">
+            </a>
             <h1>book app</h1>
             <nav>
                 <ul>
                     <li>All Books</li>
-                    <li><a href="/form"> Add Book</a></li>
+                    <li>
+                        <a href="/form"> Add Book</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -70,7 +74,7 @@
     <main>
         <section class="error-view container">
             <h2 class="view-title"> Oops, error!</h2>
-          <section id="error-message"></section>
+            <section id="error-message"></section>
         </section>
 
         <section class="book-view container">
@@ -89,7 +93,7 @@
 
         <section class="new-book container">
             <h1>Add a New Book</h1>
-        <section id="new-book" class="new-book-content">
+            <section id="new-book" class="new-book-content">
                 <form action="#" id="new-form">
                     <label>
                         <input type="text" id="title" placeholder="Book title" required>
@@ -107,23 +111,39 @@
                     <button type="submit">Submit</button>
                 </form>
 
+            </section>
         </section>
-        </section>
-      
+
     </main>
     <footer>
-    <aside class="social-links">
-      <ul>
-        <li><i class="icon-mail2"><a href=""></a></i></li>
-        <li><i class="icon-twitter"><a href=""></a></i></li>
-        <li><i class="icon-github"><a href=""></a></i></li>
-        <li><i class="icon-linkedin2"><a href=""></a></i></li>
-      </ul>
-    </aside>
+        <aside class="social-links">
+            <ul>
+                <li>
+                    <i class="icon-mail2">
+                        <a href=""></a>
+                    </i>
+                </li>
+                <li>
+                    <i class="icon-twitter">
+                        <a href=""></a>
+                    </i>
+                </li>
+                <li>
+                    <i class="icon-github">
+                        <a href=""></a>
+                    </i>
+                </li>
+                <li>
+                    <i class="icon-linkedin2">
+                        <a href=""></a>
+                    </i>
+                </li>
+            </ul>
+        </aside>
     </footer>
 
 
-<!--external CDN resources-->
+    <!--external CDN resources-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
@@ -137,4 +157,5 @@
     <script src="scripts/models/book.js"></script>
     <script src="scripts/views/routes.js"></script>
 </body>
+
 </html>

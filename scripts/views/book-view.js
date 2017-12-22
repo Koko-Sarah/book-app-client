@@ -27,7 +27,7 @@ var app = app || {};
   bookView.initNewBookPage = () => {
     $('.container').hide();
     $('.new-book').show();
-   // $('#new-book').on('change', 'input, textarea', bookView.create);
+    $('#new-book').on('change', 'input, textarea', bookView.create);
     $('#new-book').on('submit', bookView.submit);
   };
 
