@@ -1,0 +1,27 @@
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.book-list {
+    position: relative;
+    display: block;
+    width:80%;
+    margin: auto ;    
+    /* margin-top: .5em; */
+    /* margin-bottom: 5em; */
+
+}
+
+.detail-button {
+    margin-left: 15em;
+}
+
+.details-desc {
+    padding: 1em;
+}
+
+#new-form {
+    display: inline;
+}

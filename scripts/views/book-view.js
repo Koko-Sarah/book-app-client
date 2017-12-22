@@ -27,22 +27,22 @@ var app = app || {};
   bookView.initNewBookPage = () => {
     $('.container').hide();
     $('.new-book').show();
-   // $('#new-book').on('change', 'input, textarea', bookView.create);
+    // $('#new-book').on('change', 'input, textarea', bookView.create);
     $('#new-book').on('submit', bookView.submit);
   };
 
-  bookView.create = () => {
-    let newBook;
-    $('#new-book').empty();
+  // bookView.create = () => {
+  //   let newBook;
+  //   $('#new-book').empty();
 
-    newBook = new app.Book ({
-      title: $('#title').val(),
-      author: $('#author').val(),
-      isbn: $('#isbn').val(),
-      image_url: $('#image_url').val(),
-      description: $('#description').val()
-    });
-  };
+  //   newBook = new app.Book ({
+  //     title: $('#title').val(),
+  //     author: $('#author').val(),
+  //     isbn: $('#isbn').val(),
+  //     image_url: $('#image_url').val(),
+  //     description: $('#description').val()
+  //   });
+  // };
 
 
   bookView.submit = event => {
