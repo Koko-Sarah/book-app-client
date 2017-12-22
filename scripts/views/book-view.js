@@ -27,8 +27,8 @@ var app = app || {};
   bookView.initNewBookPage = () => {
     $('.container').hide();
     $('.new-book').show();
-   // $('#new-book').on('change', 'input, textarea', bookView.create);
-    $('#new-book').on('submit', bookView.submit);
+    $('#new-book').on('submit', 'input, textarea', bookView.create);
+    $('#new-book').on('click', 'button', bookView.submit);
   };
 
   bookView.create = () => {
@@ -56,7 +56,7 @@ var app = app || {};
       description: $('#description').val(),
     });
 
-    book.insertBook(() => page('/'));
+    book.insertBook( () => page('/'));
   };
 
 

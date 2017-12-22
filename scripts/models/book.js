@@ -2,8 +2,8 @@
 
 var app = app || {};
 (function (module) {
-  var __API_URL__ = 'https://sb-kk-booklist.herokuapp.com';
-  //var __API_URL__ = 'http://localhost:3000';
+  //var __API_URL__ = 'https://sb-kk-booklist.herokuapp.com';
+  var __API_URL__ = 'http://localhost:3000';
 
   function errorCallback(err){
     console.error(err);
@@ -53,16 +53,11 @@ var app = app || {};
   ///form method
 
   Book.prototype.insertBook = function (callback) {
-    console.log('hit the insertbook function');
-    $.post(`${__API_URL__}/api/v1/books`, {
-      title: this.title,
-      author: this.author,
-      isbn: this.isbn,
-      image_url: this.image_url,
-      description: this.description
-    })
+    console.log('hit the insertbook function, this:', this);
+    $.post(`${__API_URL__}/api/v1/books`, this)
       .then(console.log)
-      .then(callback);
+      .then(callback)
+      .catch(errorCallback);
   };
 
 
