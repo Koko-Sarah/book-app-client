@@ -19,6 +19,8 @@ var app = app || {};
     console.log('book.all', module.Book.all[0].book_id);
     // $('#delete-book').on('click', 'button', app.Book.deleteOne(module.Book.all[0].book_id));
     //$('#delete-book').on('click', 'button', bookView.delete());
+    $('#delete-book').on('click', 'button', bookView.delete);
+    //we are thinking need to delay the execute of deleteOne
     $('#delete-book').on('click', 'button', app.Book.deleteOne(module.Book.all[0].book_id));
     module.Book.all.map(book => $('#details-section').append(book.detailHtml()));
 
