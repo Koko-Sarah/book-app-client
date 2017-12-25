@@ -74,6 +74,35 @@ var app = app || {};
     app.Book.deleteOne(module.Book.all[0].book_id);
   };
 
+  bookView.initUpdateBook = (ctx, next) => {
+    console.log('hit initUpdate ctx is', app.Book.all[0].title);
+    $('.container').hide();
+    $('.update-view').show();
+    $('#update-form:eq(0)').val(`POOOP ${app.Book.all[0].title}`);
+    $('#author').val(app.Book.all[0].author);
+    $('#update-form input [name="isbn"]').val(app.Book.all[0].isbn);
+    $('#update-form input [name="image_url"]').val(app.Book.all[0].image_url);
+    $('#update-form textarea [name="description"]').val(app.Book.all[0].description);
+
+    $('#update-form').on('submit', function(event) {
+      event.preventDefault();
+
+      let book = {
+        book_id: app.Book.all[0].book.book_id,
+        title: event.target.title.value,
+        author: event.target.author.value,
+        isbn: event.target.isbn.value,
+        image_url: event.target.image_url.value,
+        description: event.target.description.value,
+      };
+
+      module.Book.updateBook(book, app.book.book_id);
+      // module.Book.all.map(book => $('#update-section').append(book.appendTemplate('#update-form')));
+      next();
+    });
+  };
+
+
 
 
 

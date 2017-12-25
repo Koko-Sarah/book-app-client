@@ -45,10 +45,12 @@
             <h4>{{isbn}}</h4>
             <img src="{{image_url}}">
             <p>{{description}}</p>
+            <button type="button" data-bookid={{book_id}} id="update-book"><a href="/books/{{book_id}}/update">UPDATE</a></button>
             <button type="button" data-bookid={{book_id}} id="delete-book">DELETE</button>
             </div>
     </script>
     <script id="form-book-template" type="text/x-handlebars-template">
+        
         
 <!--form placeholder-->
 
@@ -66,7 +68,7 @@
             <nav class="main-nav">
                 <ul>
                     <li>
-                        <a href="/">View All Books</a>     
+                        <a href="/">View All Books</a>
                     </li>
                     <li>
                         <a href="/form">Add A New Book</a>
@@ -100,24 +102,43 @@
             <section id="new-book" class="new-book-content">
                 <form action="#" id="new-form">
                     <label>
-                        <input type="text" id="title" placeholder="Book title" required>
+                        <input type="text" id="title" placeholder="Book title" required/>
                     </label>
                     <label>
-                        <input type="text" id="author" placeholder="Author Name" required>
+                        <input type="text" id="author" placeholder="Author Name" required/>
                     </label>
                     <label>
-                        <input type="text" id="isbn" placeholder="ISBN" required>
+                        <input type="text" id="isbn" placeholder="ISBN" required/>
                     </label>
                     <label>
-                        <input type="text" id="image_url" placeholder="Image's URL" required>
+                        <input type="text" id="image_url" placeholder="Image's URL" required/>
                     </label>
                     <textarea id="description" rows="8" cols="40" placeholder="Description" required></textarea>
-                    <button id= "form-button" type="submit">Submit</button>
+                    <button id="form-button" type="submit">submit</button>
                 </form>
 
             </section>
         </section>
 
+        <section class="update-view container">
+            <h2 class="view-title">update a book</h2>
+            <form action="#" id="update-form">
+                <label>
+                    <input type="text" id="title" placeholder="Book title" required>
+                </label>
+                <label>
+                    <input type="text" id="author" placeholder="Author Name" required>
+                </label>
+                <label>
+                    <input type="text" id="isbn" placeholder="ISBN" required>
+                </label>
+                <label>
+                    <input type="text" id="image_url" placeholder="Image's URL" required>
+                </label>
+                <textarea id="description" rows="8" cols="40" placeholder="Description" required></textarea>
+                <button id="submit-button" type="submit">submit</button>
+            </form>
+        </section>
     </main>
     <footer>
         <aside class="social-links">
