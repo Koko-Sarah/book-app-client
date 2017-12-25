@@ -1,29 +1,78 @@
-html {
-    font-family: 'Lucida Sans Regular' sans-serif;
+html,
+body {
+   font-family: 'Century Gothic', sans-serif;
+   margin:0;
+   padding:0;
+   height:100%;
 }
 header {
-    background-color: black;
+    background-color:rgb(68, 66, 66);
     color: white;
     font-size: 24px;
 }
-h1 {
-    position: relative;
-    margin: 0 auto;
-}
 
 #logo {
-    width: 50px;
+    width: 65px;
+}
+h1 {
+    position: relative;
+    text-align: center;
+}
+h2 {
+    position: relative;
+    padding: 1em;
+    text-decoration: underline;
+}
+
+h3, p, img {
+    padding: .5em;
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+h3 {
+    text-decoration-line: underline;
 }
 
 nav {
     text-decoration: none;
 }
 
-.book-list{
-    display: block;
-    width:50%;
-    margin: auto;
+h4 {
+    padding: 1.5em;
+    font-size: 13px;
+    display: inline;
 }
+
+div > img {
+    /* box-shadow: 9px 8px 5px darkolivegreen; */
+    display: block;
+    width:45%;
+    margin: auto ; 
+}
+
+label, 
+input,
+textarea,
+#description {
+    font-size: 1em;
+    /* margin: 1em; */
+    display: block;
+    width:80%;
+    margin: auto ;
+    margin-bottom: .5em;
+    margin-top: .5em;
+    border-radius: .5em;
+    padding: .5em;
+    font-family: 'Century Gothic', sans-serif;
+  }
+
 footer{
     background-color: grey;
+    position:relative;
+    bottom:0;
+    width:100%;
 }
