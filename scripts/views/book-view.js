@@ -74,14 +74,15 @@ var app = app || {};
     app.Book.deleteOne(module.Book.all[0].book_id);
   };
 
-  bookView.initUpdateBook = (ctx) => {
+  bookView.initUpdateBook = (ctx, next) => {
+    console.log('hit initUpdate ctx is', app.Book.all[0].title);
     $('.container').hide();
-    $('.update-book').show();  
-    $('#update-form input[name="title"]').val(ctx.book.title);
-    $('#update-form input[name="author"]').val(ctx.book.author);
-    $('#update-form input[name="isbn"]').val(ctx.book.isbn);
-    $('#update-form input[name="image_url"]').val(ctx.book.image_url);
-    $('#update-form textarea[name="description"]').val(ctx.book.description);
+    $('.update-view').show();
+    $('#update-form input[name="title"]').val(app.Book.all[0].title);
+    $('#update-form input[name="author"]').val(app.Book.all[0].author);
+    $('#update-form input[name="isbn"]').val(app.Book.all[0].isbn);
+    $('#update-form input[name="image_url"]').val(app.Book.all[0].image_url);
+    $('#update-form textarea[name="description"]').val(app.Book.all[0].description);
 
     $('#update-form').on('submit', function(event) {
       event.preventDefault();
@@ -95,7 +96,9 @@ var app = app || {};
         description: event.target.description.value,
       };
 
-      module.Book.update(book, book.book_id);
+      module.Book.updateBook(book, app.book.book_id);
+      // module.Book.all.map(book => $('#update-section').append(book.appendTemplate('#update-form')));
+      next();
     });
   };
 

@@ -23,6 +23,10 @@ var app = app || {};
     return Handlebars.compile($('#book-details-template').text())(this);
     
   };
+  // Book.prototype.appendTemplate = function (ele) {
+  //   return Handlebars.compile($(ele).text())(this);
+
+  // };
 
   //this will call the loadall function, taking the data from the server and pushing it into the new Book constructor
 
@@ -35,6 +39,7 @@ var app = app || {};
   };
 
   Book.fetchOne = (id, callback) => {
+    console.log('fetchOne id', id);
     $.get(`${__API_URL__}/api/v1/books/${id}`)
       .then(Book.loadAll)
       .then(callback)
@@ -83,9 +88,9 @@ var app = app || {};
 
 
   //Update Method
-  Book.prototype.updateBook = function(callback) {
+  Book.prototype.updateBook = function() {
     $.ajax({
-      url: `/books/${this.article_id}`,
+      url: `/books/${this.book_id}`,
       method: 'PUT',
       data: {
         book_id: this.book_id,
@@ -96,8 +101,8 @@ var app = app || {};
         description: this.description,
       }
     })
-      .then(console.log)
-      .then(callback);
+      .then(console.log('successfully reached the update method'));
+      //.then(callback);
   };
 
 
