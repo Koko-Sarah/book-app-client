@@ -12,18 +12,21 @@ var app = app || {};
 
   };
 
-  bookView.initBookDetails = function () {
+  bookView.initBookDetails = function (ctx, next) {
     $('.container').hide();
     $('.book-details').show();
     $('#details-section').empty();
     console.log('book.all', module.Book.all[0].book_id);
-    // $('#delete-book').on('click', 'button', app.Book.deleteOne(module.Book.all[0].book_id));
-    //$('#delete-book').on('click', 'button', bookView.delete());
-    $('#delete-book').on('click', 'button', bookView.delete);
+    console.log('ctx', ctx.book);
+    console.log('this', this);
     //we are thinking need to delay the execute of deleteOne
-    $('#delete-book').on('click', 'button', app.Book.deleteOne(module.Book.all[0].book_id));
+    //$('#delete-book').on('click', 'button', app.Book.deleteOne);
+    //$('#delete-book').on('click', 'button', app.Book.deleteOne(module.Book.all[0].book_id))
     module.Book.all.map(book => $('#details-section').append(book.detailHtml()));
-
+    $('#delete-book').on('click', function () {
+      module.Book.deleteOne(module.Book.all[0].book_id);
+    });
+    next();
   };
 
 
