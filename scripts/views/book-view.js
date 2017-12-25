@@ -60,6 +60,32 @@ var app = app || {};
   };
 
 
+  bookView.initUpdateBook = (ctx) => {
+    $('.container').hide();
+    $('.update-book').show();  
+    $('#update-form input[name="title"]').val(ctx.book.title);
+    $('#update-form input[name="author"]').val(ctx.book.author);
+    $('#update-form input[name="isbn"]').val(ctx.book.isbn);
+    $('#update-form input[name="image_url"]').val(ctx.book.image_url);
+    $('#update-form textarea[name="description"]').val(ctx.book.description);
+
+    $('#update-form').on('submit', function(event) {
+      event.preventDefault();
+
+      let book = {
+        book_id: ctx.book.book_id,
+        title: event.target.title.value,
+        author: event.target.author.value,
+        isbn: event.target.isbn.value,
+        image_url: event.target.image_url.value,
+        description: event.target.description.value,
+      };
+
+      module.Book.update(book, book.book_id);
+    });
+  };
+
+
 
 
 

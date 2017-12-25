@@ -31,7 +31,8 @@
   color: #ffffff;
 }
   #form-button,
-  .detail-button {
+  .detail-button,
+  #submit-button {
     float: right;
     padding: 1em;
     margin: 1em;

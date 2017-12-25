@@ -52,6 +52,8 @@ var app = app || {};
 
   ///UPDATE METHOD
 
+  
+
   // Book.prototype.insertBook = function (callback) {
   //   console.log('hit the insertbook function, this:', this);
   //   $.post(`${__API_URL__}/api/v1/books`, this)
@@ -84,6 +86,24 @@ var app = app || {};
   //     .catch(module.errorView.initErrorPage);
   // };
 
+
+  //Update Method
+  Book.prototype.updateBook = function(callback) {
+    $.ajax({
+      url: `/books/${this.article_id}`,
+      method: 'PUT',
+      data: {
+        book_id: this.book_id,
+        title: this.title,
+        author: this.author,
+        isbn: this.isbn,
+        image_url: this.image_url,
+        description: this.description,
+      }
+    })
+      .then(console.log)
+      .then(callback);
+  };
 
 
   module.Book = Book;
