@@ -2,7 +2,7 @@
 
 var app = app || {};
 (function (module) {
-  // var __API_URL__ = 'https://sb-kk-booklist.herokuapp.com';
+  //var __API_URL__ = 'https://sb-kk-booklist.herokuapp.com';
   var __API_URL__ = 'http://localhost:3000';
 
   function errorCallback(err){
@@ -21,6 +21,7 @@ var app = app || {};
 
   Book.prototype.detailHtml = function() {
     return Handlebars.compile($('#book-details-template').text())(this);
+    
   };
 
   //this will call the loadall function, taking the data from the server and pushing it into the new Book constructor
@@ -42,6 +43,7 @@ var app = app || {};
 
   Book.all = [];
   Book.loadAll = rows => Book.all = rows.sort((a,b) => a.title - b.title).map(book => new Book(book));
+ 
 
   // Book.fetchAll = callback =>{
   //   $.get(`${__API_URL__}/api/v1/books`)
@@ -52,15 +54,6 @@ var app = app || {};
 
   ///UPDATE METHOD
 
-  
-
-  // Book.prototype.insertBook = function (callback) {
-  //   console.log('hit the insertbook function, this:', this);
-  //   $.post(`${__API_URL__}/api/v1/books`, this)
-  //     .then(console.log)
-  //     .then(callback)
-  //     .catch(errorCallback);
-  // };
   Book.prototype.insertBook = function () {
     console.log('hit the insertbook function, this:', this);
     $.post(`${__API_URL__}/api/v1/books`, {
@@ -75,16 +68,18 @@ var app = app || {};
 
   ///DELETE METHOD
 
-  // Book.deleteOne = function (id) {
-  //   console.log('hit the deleteOne function, this:', this);
+  Book.deleteOne = function (id) {
+    console.log('hit the deleteOne function, this:', id);
 
-  //   $.ajax ({
-  //     url: `${__API_URL__}/api/v1/books/${id}`,
-  //     method: 'DELETE',
-  //   })
-  //     .then(() => page('/'))
-  //     .catch(module.errorView.initErrorPage);
-  // };
+    $.ajax ({
+      url: `${__API_URL__}/api/v1/books/${id}`,
+      method: 'DELETE',
+    })
+      .then(console.log('successfully reached the delete method: ', id))
+      .then(() => page('/'))
+      .catch(module.errorView.initErrorPage);
+  };
+
 
 
   //Update Method

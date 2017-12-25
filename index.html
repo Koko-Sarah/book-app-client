@@ -33,7 +33,7 @@
                     <h3>{{title}}</h3>
                     <p>{{author}}</p>
                 </div>
-                <button type="button" class="detail-button" id="bookid--{{book_id}}"><a href="/books/{{book_id}}">View Details</a></button>
+                <button type="button" class="detail-button" id="detail-button"><a href="/books/{{book_id}}">View Details</a></button>
             </div>
         </li>
    </script>
@@ -45,7 +45,7 @@
             <h4>{{isbn}}</h4>
             <img src="{{image_url}}">
             <p>{{description}}</p>
-            <button><a href="/books/:book_id/update">Update</a></button>
+            <button type="button" data-bookid={{book_id}} id="delete-book">DELETE</button>
             </div>
     </script>
     <script id="form-book-template" type="text/x-handlebars-template">
