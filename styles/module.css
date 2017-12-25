@@ -1,0 +1,40 @@
+/* .main-nav {
+  display: none;
+  background-color: rgba(120, 120, 120, 0.75);
+} */
+
+.main-nav a {
+  text-decoration: none;
+  color: #ddd;
+}
+
+.main-nav a:hover {
+  cursor: pointer;
+}
+
+.main-nav li {
+  padding: 2vw 4vw;
+}
+
+.header-content {
+  position: relative;
+  padding: 2vw;
+}
+
+.icon-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 15%; 
+  margin-top: 3%;
+  font-size: 8vw;
+  color: #ffffff;
+}
+  #form-button,
+  .detail-button {
+    float: right;
+    padding: 1em;
+    margin: 1em;
+    border-radius: .5em;
+
+}
