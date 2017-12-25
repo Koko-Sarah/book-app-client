@@ -16,8 +16,14 @@ var app = app || {};
     $('.container').hide();
     $('.book-details').show();
     $('#details-section').empty();
-    // console.log(module.Book.all)
+    console.log('book.all', module.Book.all[0].book_id);
+    // $('#delete-book').on('click', 'button', app.Book.deleteOne(module.Book.all[0].book_id));
+    //$('#delete-book').on('click', 'button', bookView.delete());
+    $('#delete-book').on('click', 'button', bookView.delete);
+    //we are thinking need to delay the execute of deleteOne
+    $('#delete-book').on('click', 'button', app.Book.deleteOne(module.Book.all[0].book_id));
     module.Book.all.map(book => $('#details-section').append(book.detailHtml()));
+
   };
 
 
@@ -59,6 +65,11 @@ var app = app || {};
     book.insertBook( () => page('/'));
   };
 
+  bookView.delete = event => {
+    console.log('we hit delete event');
+    event.preventDefault();
+    app.Book.deleteOne(module.Book.all[0].book_id);
+  };
 
 
 
